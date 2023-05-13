@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { FcSearch } from 'react-icons/fc';
 import PropTypes from 'prop-types'; 
 import {
   HeaderBar,
@@ -28,24 +29,26 @@ class Searchbar extends Component {
     }
 
 render() {
-return (<HeaderBar className="searchbar">
-  <SearchForm  onSubmit = {this.handleSubmit}>
-    <SearchFormBtn type="submit">
-      <SearchFormBtnLabel>Search</SearchFormBtnLabel>
-    </SearchFormBtn>
+return (
+  <HeaderBar className="searchbar">
+    <SearchForm onSubmit={this.handleSubmit}>
+      <SearchFormBtn type="submit">
+        <FcSearch />
+        <SearchFormBtnLabel></SearchFormBtnLabel>
+      </SearchFormBtn>
 
-    <SearchFormInput
-      name='queryForm'
-      type="text"
-      autocomplete="off"
-      autoFocus
-      placeholder="Search images and photos"
-      onChange={this.handleChange}
-      value= {this.state.queryForm}
-    />
-  </SearchForm>
-</HeaderBar >
-    )}
+      <SearchFormInput
+        name="queryForm"
+        type="text"
+        autocomplete="off"
+        autoFocus
+        placeholder="Search images and photos"
+        onChange={this.handleChange}
+        value={this.state.queryForm}
+      />
+    </SearchForm>
+  </HeaderBar>
+);}
 }
 
 export default Searchbar

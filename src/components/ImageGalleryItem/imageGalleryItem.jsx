@@ -19,9 +19,9 @@ function GalleryItem({ queryImages }) {
 export default GalleryItem;
 
 GalleryItem.propTypes = {
-  queryImages: PropTypes.arraOf(
+  queryImages: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       webformatURL: PropTypes.string.isRequired,
       largeImageURL: PropTypes.string.isRequired,
     })
