@@ -81,7 +81,7 @@ export default class App extends Component {
     }));
   };
   render() {
-    const { images, status, showModal, currentImage } = this.state;
+    const { images, status, showModal, currentImage, error } = this.state;
     return (
       <div
         style={{
@@ -99,6 +99,7 @@ export default class App extends Component {
             <GalleryItem queryImages={images} />
           </Gallery>
         )}
+        {status === 'rejected' && <div>Oups {error}</div> }
         {status === 'pending' && (
           <ModalWindow>
             <Loader />
