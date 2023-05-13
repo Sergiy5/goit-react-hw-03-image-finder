@@ -6,7 +6,6 @@ export const FetchAPI = (query, page) => {
      return fetch(
        `${BASE_URL}?key=${KEY_API}&q=${query}&page=${PAGE}&per_page=${PER_PAGE}&image_type=photo&orientation=horizontal`
      ).then(response => {
-       console.log(response);
        if (response.ok) {
          return response.json();
        }
